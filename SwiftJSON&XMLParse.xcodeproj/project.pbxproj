@@ -13,7 +13,24 @@
 		C8B397561D360F3D00243182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8B397551D360F3D00243182 /* Assets.xcassets */; };
 		C8B397591D360F3D00243182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B397571D360F3D00243182 /* LaunchScreen.storyboard */; };
 		C8B397641D360F3D00243182 /* SwiftJSON_XMLParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B397631D360F3D00243182 /* SwiftJSON_XMLParseTests.swift */; };
+		C8B3976F1D361A5B00243182 /* NeighboursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B3976E1D361A5B00243182 /* NeighboursViewController.swift */; };
+		C8B397721D36205C00243182 /* countries_short.txt in Resources */ = {isa = PBXBuildFile; fileRef = C8B397701D36205C00243182 /* countries_short.txt */; };
+		C8B397731D36205C00243182 /* countries_short.txt in Resources */ = {isa = PBXBuildFile; fileRef = C8B397701D36205C00243182 /* countries_short.txt */; };
+		C8B397741D36205C00243182 /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = C8B397711D36205C00243182 /* countries.txt */; };
+		C8B397751D36205C00243182 /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = C8B397711D36205C00243182 /* countries.txt */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		C80F710E1D38B4C4007A270C /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		C8B397601D360F3D00243182 /* PBXContainerItemProxy */ = {
@@ -36,6 +53,9 @@
 		C8B3975F1D360F3D00243182 /* SwiftJSON&XMLParseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftJSON&XMLParseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B397631D360F3D00243182 /* SwiftJSON_XMLParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJSON_XMLParseTests.swift; sourceTree = "<group>"; };
 		C8B397651D360F3D00243182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8B3976E1D361A5B00243182 /* NeighboursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeighboursViewController.swift; sourceTree = "<group>"; };
+		C8B397701D36205C00243182 /* countries_short.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries_short.txt; sourceTree = "<group>"; };
+		C8B397711D36205C00243182 /* countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +99,10 @@
 			children = (
 				C8B3974E1D360F3D00243182 /* AppDelegate.swift */,
 				C8B397501D360F3D00243182 /* ViewController.swift */,
+				C8B3976E1D361A5B00243182 /* NeighboursViewController.swift */,
 				C8B397521D360F3D00243182 /* Main.storyboard */,
+				C8B397701D36205C00243182 /* countries_short.txt */,
+				C8B397711D36205C00243182 /* countries.txt */,
 				C8B397551D360F3D00243182 /* Assets.xcassets */,
 				C8B397571D360F3D00243182 /* LaunchScreen.storyboard */,
 				C8B3975A1D360F3D00243182 /* Info.plist */,
@@ -108,6 +131,7 @@
 				C8B397491D360F3D00243182 /* Resources */,
 			);
 			buildRules = (
+				C80F710E1D38B4C4007A270C /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -179,8 +203,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B397721D36205C00243182 /* countries_short.txt in Resources */,
 				C8B397591D360F3D00243182 /* LaunchScreen.storyboard in Resources */,
 				C8B397561D360F3D00243182 /* Assets.xcassets in Resources */,
+				C8B397741D36205C00243182 /* countries.txt in Resources */,
 				C8B397541D360F3D00243182 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B397731D36205C00243182 /* countries_short.txt in Resources */,
+				C8B397751D36205C00243182 /* countries.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B3976F1D361A5B00243182 /* NeighboursViewController.swift in Sources */,
 				C8B397511D360F3D00243182 /* ViewController.swift in Sources */,
 				C8B3974F1D360F3D00243182 /* AppDelegate.swift in Sources */,
 			);
@@ -392,6 +421,7 @@
 				C8B3976A1D360F3D00243182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8B3976B1D360F3D00243182 /* Build configuration list for PBXNativeTarget "SwiftJSON&XMLParseTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +430,7 @@
 				C8B3976D1D360F3D00243182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

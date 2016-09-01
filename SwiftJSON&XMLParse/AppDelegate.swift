@@ -8,6 +8,9 @@
 
 import UIKit
 
+//Account username of  Geonames.com
+let kUsername = "jitu310"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -40,7 +43,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+   
+    
+    
+    class func downloadDataFromURL(url: NSURL, completion: (responseData: NSData?) -> Void) {
+        
+        // Instantiate a session configuration object.
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        
+        // Instantiate a session object.
+        let session = NSURLSession(configuration: configuration)
+        
+        // Create a data task object to perform the data downloading.
+        let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                // If any error occurs then just display its description on the console.
+                print("\(error!.localizedDescription)")
+            } else {
+                // If no error occurs, check the HTTP status code.
+                if let HTTPResponse = response as? NSHTTPURLResponse {
+                    
+                    let HTTPStatusCode = HTTPResponse.statusCode
+                    
+                    // If it's other than 200, then show it on the console.
+                    if HTTPStatusCode != 200 {
+                        print("HTTP status code = \(HTTPStatusCode)")
+                    }
+                    // Call the completion handler with the returned data on the main thread.
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ completion(responseData: data)})
+                }
+            }
+        })
+        // Resume the task.
+        task.resume()
+    }
 
 }
 

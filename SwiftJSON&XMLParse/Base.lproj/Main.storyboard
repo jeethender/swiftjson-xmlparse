@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KHA-Cm-Fvy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Country Info-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftJSON_XMLParse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,121 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DD-TE-9hc">
+                                <rect key="frame" x="20" y="119" width="560" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.73216811739999998" blue="0.75059436560000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="YZV-j9-trA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter country name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2SW-p5-boE">
+                                <rect key="frame" x="20" y="81" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="01r-aS-YQh"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p3y-ba-TG4">
+                                <rect key="frame" x="0.0" y="158" width="600" height="442"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Xb3-2A-tYK"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eZX-oc-1ba"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p3y-ba-TG4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2gP-Xv-hPn"/>
+                            <constraint firstItem="2SW-p5-boE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4wH-Gn-bhv"/>
+                            <constraint firstItem="9DD-TE-9hc" firstAttribute="centerX" secondItem="p3y-ba-TG4" secondAttribute="centerX" id="5aP-M3-zwg"/>
+                            <constraint firstItem="9DD-TE-9hc" firstAttribute="top" secondItem="2SW-p5-boE" secondAttribute="bottom" constant="8" symbolic="YES" id="8yv-5P-2vU"/>
+                            <constraint firstItem="p3y-ba-TG4" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="OMv-Xk-yG8"/>
+                            <constraint firstItem="2SW-p5-boE" firstAttribute="trailing" secondItem="9DD-TE-9hc" secondAttribute="trailing" id="U15-Qe-gH8"/>
+                            <constraint firstItem="2SW-p5-boE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="WDz-Te-TNJ"/>
+                            <constraint firstAttribute="trailing" secondItem="p3y-ba-TG4" secondAttribute="trailing" id="WTF-a5-26R"/>
+                            <constraint firstItem="p3y-ba-TG4" firstAttribute="top" secondItem="9DD-TE-9hc" secondAttribute="bottom" constant="8" symbolic="YES" id="XAn-Mc-Jci"/>
+                            <constraint firstItem="2SW-p5-boE" firstAttribute="leading" secondItem="9DD-TE-9hc" secondAttribute="leading" id="o1l-KP-Y6X"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Country Info" id="4Ct-CM-pQu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Owg-hn-IGF">
+                            <connections>
+                                <action selector="sendJSON:" destination="BYZ-38-t0r" id="ccf-mZ-Bls"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="countryInfoTV" destination="p3y-ba-TG4" id="PJy-Eb-ati"/>
+                        <outlet property="countryLabel" destination="9DD-TE-9hc" id="m9v-JT-WBc"/>
+                        <outlet property="countryTextField" destination="2SW-p5-boE" id="ric-7d-GzY"/>
+                        <segue destination="Gc7-0h-MHB" kind="show" identifier="idSegueNeighbours" id="LeZ-gg-TdY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="367" y="229"/>
+        </scene>
+        <!--Neighbours-->
+        <scene sceneID="g4r-h5-pX3">
+            <objects>
+                <viewController id="Gc7-0h-MHB" customClass="NeighboursViewController" customModule="SwiftJSON_XMLParse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="idn-sx-Wy2"/>
+                        <viewControllerLayoutGuide type="bottom" id="WJH-d8-ovK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JOf-qj-TWN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hVn-9A-jsx">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gc7-0h-MHB" id="8gN-Ke-qVS"/>
+                                    <outlet property="delegate" destination="Gc7-0h-MHB" id="ID6-fr-Fs7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hVn-9A-jsx" firstAttribute="bottom" secondItem="WJH-d8-ovK" secondAttribute="top" id="Rco-RC-92f"/>
+                            <constraint firstItem="hVn-9A-jsx" firstAttribute="top" secondItem="JOf-qj-TWN" secondAttribute="top" id="WGo-uU-717"/>
+                            <constraint firstItem="hVn-9A-jsx" firstAttribute="leading" secondItem="JOf-qj-TWN" secondAttribute="leading" id="aUw-f0-5U5"/>
+                            <constraint firstAttribute="trailing" secondItem="hVn-9A-jsx" secondAttribute="trailing" id="tUn-0p-ExM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Neighbours" id="Rek-cQ-tRO"/>
+                    <connections>
+                        <outlet property="tableView" destination="hVn-9A-jsx" id="GYk-Ck-d4o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jnz-Qs-32f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="217"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F1V-63-bng">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KHA-Cm-Fvy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0em-eO-4yx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lGV-2t-DX5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbX-Q3-f2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-265" y="229"/>
         </scene>
     </scenes>
 </document>
